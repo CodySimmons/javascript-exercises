@@ -6,21 +6,13 @@ function subtract(a, b) {
   return a - b;
 }
 function sum(obj) {
-  let sum = 0;
-  //   console.log(obj);
-
-  for (let key of obj) {
-    sum += key;
-  }
-  return sum;
+  return obj.reduce((total, nextNumber) => total + nextNumber, 0);
 }
 
 function multiply(obj) {
-  let multiplyTotal = 1;
-  for (let key of obj) {
-    multiplyTotal *= key;
-  }
-  return multiplyTotal;
+  return obj.length
+    ? obj.reduce((total, nextNumber) => total * nextNumber, 1)
+    : 0;
 }
 
 function power(a, b) {
@@ -47,9 +39,10 @@ module.exports = {
   factorial,
 };
 
-// let sumArray = [1, 2, 3, 4, 5, 6, 7, 8];
+let sumArray = [1, 2, 3, 4, 5, 6, 7, 8];
 // let sumArray = [];
 // console.log(sum(sumArray));
 // console.log(sum([7]));
-// console.log(multiply([8, 2]));
-console.log(factorial(5));
+console.log(multiply([8, 2]));
+console.log(multiply([]));
+// console.log(factorial(5));
